@@ -41,7 +41,7 @@ end
 
 Note that `yaml/dotted-key` is an alias for `yaml/rails` - you can use both interchangeably.
 
-See the documentation contained in [rosette-core](https://github.com/rosette-proj/rosette-core) for a complete list of extractor configuration options in addition to `match_file_extension`.
+See the documentation contained in [rosette-core](https://github.com/rosette-proj/rosette-core) for a complete list of extractor configuration options in addition to `match_file_extensions`.
 
 ### Standalone Usage
 
@@ -51,8 +51,8 @@ While most of the time rosette-extractor-yaml will probably be used alongside ro
 yaml_source_code = "en:\n  title:\n    Foobarbaz"
 extractor = Rosette::Extractors::YamlExtractor::RailsExtractor.new
 extractor.extract_each_from(yaml_source_code) do |phrase|
-  puts phrase.meta_key # => "en.title"
-  puts phrase.key      # => "Foobar"
+  phrase.meta_key # => "en.title"
+  phrase.key      # => "Foobar"
 end
 ```
 
