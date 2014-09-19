@@ -1,0 +1,37 @@
+:dotted-key:
+  short.yml:
+    foo.bar: baz
+  nesting.yml:
+    en.activerecord.attributes.user.unique_name: Username
+    en.activerecord.attributes.user.password: Password
+    en.activerecord.attributes.user.email_address: Email address
+    en.activerecord.attributes.email_address.address: Email address
+    en.activerecord.attributes.testimonial.original_text: Your Story
+    en.activerecord.errors.custom.user.uniqueness_of_unique_name: has already been taken
+    en.activerecord.errors.custom.user.password_does_not_match_unique_name: cannot match username
+    en.activerecord.errors.custom.user.cannot_disable_if_full_access: Cannot disable a user who has full access
+    en.activerecord.errors.custom.user.current_password_blank: Please enter your current password
+    en.activerecord.errors.custom.user.current_password_mismatch: The password you entered does not match our records
+  arrays.yml:
+    en.jobs.benefits.0: Benefits to write home about
+    en.jobs.benefits.1: Stress-free commute
+    en.jobs.benefits.2: Brand-new gadgets
+    en.jobs.other.0: Stay happy and healthy
+    en.jobs.other.1: Playtime anytime
+  arrays_and_hashes.yml:
+    en.jobs.benefits.0.title: Benefits to write home about
+    en.jobs.benefits.0.body.0: Competitive salaries and bonuses
+    en.jobs.benefits.0.body.1: Medical, dental, vision, and life insurance plans
+    en.jobs.benefits.1.title: Stress-free commute
+    en.jobs.benefits.1.body.0: Downtown SF location right next to BART and MUNI lines
+    en.jobs.benefits.1.body.1: Free cabs and meals for those late nights
+    en.jobs.benefits.2.title: Brand-new gadgets
+    en.jobs.benefits.2.body.0: Pick out a new Mac or PC desktop or laptop
+    en.jobs.benefits.2.body.1: Big monitors, fancy headphones, and more
+    en.jobs.benefits.3.title: Stay happy and healthy
+    en.jobs.benefits.3.body.0: Catered lunches and a pantry with every snack, drink, and Bi-Rite meal
+    en.jobs.benefits.3.body.1: Gym membership at the Sports Club LA (2 blocks from the office)
+    en.jobs.benefits.4.title: Playtime anytime
+    en.jobs.benefits.4.body.0: Unlimited paid time off
+    en.jobs.benefits.4.body.1: A game room with video games, board games, foosball, ping-pong, and shuffleboard
+    en.jobs.benefits.4.body.2: A Culture Team behind office happy hours and Hawai'i holiday parties
