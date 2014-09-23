@@ -41,8 +41,14 @@ module Rosette
                 walk(val, cur_path + [idx.to_s], &block)
               end
             else
-              yield obj, cur_path.join('.')
+              yield obj, remove_locale(cur_path).join('.')
           end
+        end
+
+        private
+
+        def remove_locale(path)
+          path[1..-1]
         end
       end
 
