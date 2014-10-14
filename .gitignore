@@ -4,3 +4,4 @@ Jarfile.lock
 pkg
 tester.rb
 .jbundler
+.ruby-version

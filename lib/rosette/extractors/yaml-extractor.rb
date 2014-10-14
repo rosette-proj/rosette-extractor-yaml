@@ -41,19 +41,24 @@ module Rosette
                 walk(val, cur_path + [idx.to_s], &block)
               end
             else
-              yield obj, remove_locale(cur_path).join('.')
+              yield obj, scrub_path(cur_path).join('.')
           end
         end
 
         private
 
-        def remove_locale(path)
-          path[1..-1]
+        def scrub_path(path)
+          path  # no-op
         end
       end
 
-      # alias
-      RailsExtractor = DottedKeyExtractor
+      class RailsExtractor < DottedKeyExtractor
+        private
+
+        def scrub_path(path)
+          path[1..-1]
+        end
+      end
     end
 
   end
