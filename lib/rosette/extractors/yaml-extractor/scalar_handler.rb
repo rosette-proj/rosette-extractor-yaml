@@ -17,7 +17,7 @@ module Rosette
         end
 
         def scalar(value, anchor, tag, plain, quoted, style)
-          scalar = YamlScalar.new(mark.line, value)
+          scalar = YamlScalar.new(mark.line - 1, value)
           case current
           when Hash
             if @last_scalar
