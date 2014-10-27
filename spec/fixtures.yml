@@ -1,37 +1,101 @@
 :dotted-key:
   short.yml:
-    foo.bar: baz
+    - meta_key: foo.bar
+      key: baz
+      line_number: 2
   nesting.yml:
-    en.activerecord.attributes.user.unique_name: Username
-    en.activerecord.attributes.user.password: Password
-    en.activerecord.attributes.user.email_address: Email address
-    en.activerecord.attributes.email_address.address: Email address
-    en.activerecord.attributes.testimonial.original_text: Your Story
-    en.activerecord.errors.custom.user.uniqueness_of_unique_name: has already been taken
-    en.activerecord.errors.custom.user.password_does_not_match_unique_name: cannot match username
-    en.activerecord.errors.custom.user.cannot_disable_if_full_access: Cannot disable a user who has full access
-    en.activerecord.errors.custom.user.current_password_blank: Please enter your current password
-    en.activerecord.errors.custom.user.current_password_mismatch: The password you entered does not match our records
+    - meta_key: en.activerecord.attributes.user.unique_name
+      key: Username
+      line_number: 5
+    - meta_key: en.activerecord.attributes.user.password
+      key: Password
+      line_number: 6
+    - meta_key: en.activerecord.attributes.user.email_address
+      key: Email address
+      line_number: 7
+    - meta_key: en.activerecord.attributes.email_address.address
+      key: Email address
+      line_number: 9
+    - meta_key: en.activerecord.attributes.testimonial.original_text
+      key: Your Story
+      line_number: 11
+    - meta_key: en.activerecord.errors.custom.user.uniqueness_of_unique_name
+      key: has already been taken
+      line_number: 15
+    - meta_key: en.activerecord.errors.custom.user.password_does_not_match_unique_name
+      key: cannot match username
+      line_number: 16
+    - meta_key: en.activerecord.errors.custom.user.cannot_disable_if_full_access
+      key: Cannot disable a user who has full access
+      line_number: 17
+    - meta_key: en.activerecord.errors.custom.user.current_password_blank
+      key: Please enter your current password
+      line_number: 18
+    - meta_key: en.activerecord.errors.custom.user.current_password_mismatch
+      key: The password you entered does not match our records
+      line_number: 19
   arrays.yml:
-    en.jobs.benefits.0: Benefits to write home about
-    en.jobs.benefits.1: Stress-free commute
-    en.jobs.benefits.2: Brand-new gadgets
-    en.jobs.other.0: Stay happy and healthy
-    en.jobs.other.1: Playtime anytime
+    - meta_key: en.jobs.benefits.0
+      key: Benefits to write home about
+      line_number: 4
+    - meta_key: en.jobs.benefits.1
+      key: Stress-free commute
+      line_number: 5
+    - meta_key: en.jobs.benefits.2
+      key: Brand-new gadgets
+      line_number: 6
+    - meta_key: en.jobs.other.0
+      key: Stay happy and healthy
+      line_number: 8
+    - meta_key: en.jobs.other.1
+      key: Playtime anytime
+      line_number: 9
   arrays_and_hashes.yml:
-    en.jobs.benefits.0.title: Benefits to write home about
-    en.jobs.benefits.0.body.0: Competitive salaries and bonuses
-    en.jobs.benefits.0.body.1: Medical, dental, vision, and life insurance plans
-    en.jobs.benefits.1.title: Stress-free commute
-    en.jobs.benefits.1.body.0: Downtown SF location right next to BART and MUNI lines
-    en.jobs.benefits.1.body.1: Free cabs and meals for those late nights
-    en.jobs.benefits.2.title: Brand-new gadgets
-    en.jobs.benefits.2.body.0: Pick out a new Mac or PC desktop or laptop
-    en.jobs.benefits.2.body.1: Big monitors, fancy headphones, and more
-    en.jobs.benefits.3.title: Stay happy and healthy
-    en.jobs.benefits.3.body.0: Catered lunches and a pantry with every snack, drink, and Bi-Rite meal
-    en.jobs.benefits.3.body.1: Gym membership at the Sports Club LA (2 blocks from the office)
-    en.jobs.benefits.4.title: Playtime anytime
-    en.jobs.benefits.4.body.0: Unlimited paid time off
-    en.jobs.benefits.4.body.1: A game room with video games, board games, foosball, ping-pong, and shuffleboard
-    en.jobs.benefits.4.body.2: A Culture Team behind office happy hours and Hawai'i holiday parties
+    - meta_key: en.jobs.benefits.0.title
+      key: Benefits to write home about
+      line_number: 5
+    - meta_key: en.jobs.benefits.0.body.0
+      key: Competitive salaries and bonuses
+      line_number: 7
+    - meta_key: en.jobs.benefits.0.body.1
+      key: Medical, dental, vision, and life insurance plans
+      line_number: 8
+    - meta_key: en.jobs.benefits.1.title
+      key: Stress-free commute
+      line_number: 10
+    - meta_key: en.jobs.benefits.1.body.0
+      key: Downtown SF location right next to BART and MUNI lines
+      line_number: 12
+    - meta_key: en.jobs.benefits.1.body.1
+      key: Free cabs and meals for those late nights
+      line_number: 13
+    - meta_key: en.jobs.benefits.2.title
+      key: Brand-new gadgets
+      line_number: 15
+    - meta_key: en.jobs.benefits.2.body.0
+      key: Pick out a new Mac or PC desktop or laptop
+      line_number: 17
+    - meta_key: en.jobs.benefits.2.body.1
+      key: Big monitors, fancy headphones, and more
+      line_number: 18
+    - meta_key: en.jobs.benefits.3.title
+      key: Stay happy and healthy
+      line_number: 20
+    - meta_key: en.jobs.benefits.3.body.0
+      key: Catered lunches and a pantry with every snack, drink, and Bi-Rite meal
+      line_number: 22
+    - meta_key: en.jobs.benefits.3.body.1
+      key: Gym membership at the Sports Club LA (2 blocks from the office)
+      line_number: 23
+    - meta_key: en.jobs.benefits.4.title
+      key: Playtime anytime
+      line_number: 25
+    - meta_key: en.jobs.benefits.4.body.0
+      key: Unlimited paid time off
+      line_number: 27
+    - meta_key: en.jobs.benefits.4.body.1
+      key: A game room with video games, board games, foosball, ping-pong, and shuffleboard
+      line_number: 28
+    - meta_key: en.jobs.benefits.4.body.2
+      key: A Culture Team behind office happy hours and Hawai'i holiday parties
+      line_number: 29
