@@ -30,6 +30,8 @@ module Rosette
         scalar_handler.parser = parser
         parser.parse(yaml_content)
         scalar_handler.stack.pop
+      rescue Psych::SyntaxError => e
+        raise Rosette::Core::SyntaxError.new('syntax error', e, :yaml)
       end
 
       class DottedKeyExtractor < YamlExtractor
