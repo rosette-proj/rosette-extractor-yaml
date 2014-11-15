@@ -52,7 +52,7 @@ module Rosette
                 walk(val, cur_path + [idx.to_s], &block)
               end
             else
-              yield obj.value, scrub_path(cur_path).join('.'), obj.line_number
+              yield obj.value, scrub_path(cur_path).join('.'), obj.line_number + 1
           end
         end
 
