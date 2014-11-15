@@ -1,7 +1,8 @@
 # encoding: UTF-8
 
-require 'rosette/core'
 require 'psych'
+require 'rosette/core'
+require 'rosette/extractors/yaml-extractor/yaml_cleaner'
 require 'rosette/extractors/yaml-extractor/scalar_handler'
 
 module Rosette
@@ -28,10 +29,14 @@ module Rosette
         scalar_handler = ScalarHandler.new
         parser = Psych::Parser.new(scalar_handler)
         scalar_handler.parser = parser
-        parser.parse(yaml_content)
+        parser.parse(clean_yaml(yaml_content))
         scalar_handler.stack.pop
       rescue Psych::SyntaxError => e
         raise Rosette::Core::SyntaxError.new('syntax error', e, :yaml)
+      end
+
+      def clean_yaml(yaml_content)
+        YamlCleaner.clean(yaml_content)
       end
 
       class DottedKeyExtractor < YamlExtractor

@@ -1,4 +1,12 @@
 :dotted-key:
+  invalid_single_quote_escape_array.yml:
+    - meta_key: foo.bar.0
+      key: baz'boo
+      line_number: 3
+  invalid_single_quote_escape.yml:
+    - meta_key: foo.bar
+      key: baz'boo
+      line_number: 2
   short.yml:
     - meta_key: foo.bar
       key: baz
