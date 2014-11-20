@@ -17,7 +17,8 @@ module Rosette
       # and array element
       class YamlCleaner
 
-        ERROR_MESSAGE = "found unknown escape character '(39)"
+        UNKNOWN_ESCAPE_MSG = "found unknown escape character '(39)"
+        UNEXPECTED_EOS_MSG = 'found unexpected end of stream while scanning a quoted scalar'
 
         class << self
           def clean(yaml_content)
@@ -79,8 +80,8 @@ module Rosette
               YAML.load(value)
               nil
             rescue Psych::SyntaxError => e
-              if fixable?(e)
-                [[start, finish], clean_string(value)]
+              if error_type = error_type_for(e)
+                fix(error_type, yaml_content, start, finish, value)
               else
                 raise e
               end
@@ -92,9 +93,19 @@ module Rosette
             value.gsub("\\'", "'")
           end
 
-          # is the error raised by psych/snakeyaml something we can fix?
-          def fixable?(error)
-            error.message.include?(ERROR_MESSAGE)
+          def fix(error_type, yaml_content, start, finish, value)
+            # don't do anything with error type for now
+            [[start, finish], clean_string(value)]
+          end
+
+          def error_type_for(e)
+            if e.message.include?(UNKNOWN_ESCAPE_MSG)
+              :unknown_escape_sequence
+            elsif e.message.include?(UNEXPECTED_EOS_MSG)
+              :unexpected_eos
+            else
+              :unknown
+            end
           end
 
           # rather naïvely isolates the value in a yaml key/value pair by searching
