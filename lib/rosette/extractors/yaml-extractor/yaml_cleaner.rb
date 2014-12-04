@@ -132,6 +132,7 @@ module Rosette
 
           def starts_with?(charcode, yaml_content, start, finish)
             (start..finish).each do |index|
+              return false if index >= yaml_content.length
               unless yaml_content.charAt(index) == 32
                 break yaml_content.charAt(index) == charcode
               end
